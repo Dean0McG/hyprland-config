@@ -52,7 +52,7 @@
 
     "clock": {
         "locale": "C",
-        "format": "  {:%H:%M}",
+        "format": "{:%d/%m %H:%M}",
         "format-alt": "  {:%Y-%m-%d  %H:%M:%S}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
