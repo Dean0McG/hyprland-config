@@ -1,0 +1,17 @@
+font=monospace 9
+icons=0
+background-color=#000000ee
+text-color=#00ff41
+border-color=#00ff41
+border-size=1
+border-radius=3
+width=260
+padding=6,10,6,10
+margin=8,8,8,8
+default-timeout=6000
+
+[urgency=high]
+border-color=#00ff41
+text-color=#40ff70
+background-color=#001a00ee
+default-timeout=0
