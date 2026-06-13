@@ -1,0 +1,152 @@
+/* Matrix Rain — Waybar Theme */
+
+@define-color bg          rgba(0, 0, 0, 0.88);
+@define-color bg_dim      rgba(0, 20, 0, 0.72);
+@define-color border      #003b00;
+@define-color green_dim   #005500;
+@define-color green_mid   #008f11;
+@define-color green       #00cc33;
+@define-color green_bright #00ff41;
+@define-color white_green #c0ffd0;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @green;
+}
+
+/* ── pill container ── */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bg;
+    border: 1px solid @border;
+    border-radius: 10px;
+    padding: 0 6px;
+    margin: 0 4px;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.18);
+}
+
+/* ── workspaces ── */
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @green_dim;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 150ms ease;
+}
+
+#workspaces button:hover {
+    color: @green;
+    background: rgba(0, 60, 0, 0.45);
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    color: @green_bright;
+    background: rgba(0, 255, 65, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.35);
+}
+
+#workspaces button.urgent {
+    color: #000000;
+    background: @green;
+    animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { background: @green_dim; color: @green_bright; }
+}
+
+/* ── window title ── */
+#window {
+    color: @green_mid;
+    padding: 0 10px;
+    font-style: italic;
+}
+
+#window.empty {
+    padding: 0;
+    min-width: 0;
+}
+
+/* ── clock ── */
+#clock {
+    color: @green_bright;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0 14px;
+    text-shadow: 0 0 12px rgba(0, 255, 65, 0.7);
+}
+
+/* ── shared module style ── */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray {
+    padding: 0 10px;
+    color: @green;
+    transition: color 150ms;
+}
+
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover {
+    color: @green_bright;
+}
+
+/* ── separators between right modules ── */
+#cpu { border-right: 1px solid @border; }
+#memory { border-right: 1px solid @border; }
+#network { border-right: 1px solid @border; }
+#pulseaudio { border-right: 1px solid @border; }
+#battery { border-right: 1px solid @border; }
+
+/* ── battery states ── */
+#battery.charging {
+    color: @green_bright;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+#battery.warning {
+    color: #00aa22;
+}
+
+#battery.critical {
+    color: @green_dim;
+    animation: blink 1s steps(1) infinite;
+}
+
+/* ── network down/disconnected ── */
+#network.disconnected {
+    color: @green_dim;
+}
+
+/* ── tooltip ── */
+tooltip {
+    background: #000000;
+    border: 1px solid @border;
+    border-radius: 8px;
+    color: @green;
+}
+
+tooltip label {
+    color: @green;
+}
